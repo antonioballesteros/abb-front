@@ -1,56 +1,20 @@
-## Important to know
-
-```javascript
-{
-  1: {
-    feat-a: {
-      a: 9.609350793245543
-      b: 31.7783529472889
-      c: 46.88701859949038
-      d: 42.95899931190046
-      e: 43.96904668695405
-      f: 48.65743521468296
-      g: 56.06588850740972
-      h: 55.862015626711056
-      i: 48.84511505694972
-      j: 50.21384092512972
-      k: 48.54615330394554
-      l: 44.802348519596016
-      m: 49.54362908741678
-      n: 55.22454689520915
-      o: 51.92555581588798
-      p: 47.870435179915994
-      q: 44.52320705624367
-      r: 43.519328705858875
-      s: 42.67304697979544
-    },
-    feat-b: {
-      a: 15.095659832304744
-      b: 32.81253561379016
-      c: 19.95078467023319
-      d: 27.907948070748397
-    }
-    ...
-  }
-}
-```
-
-You can see the information loaded on console if you need it
 
 ### App
 
-You can test it directly from Github
+You can test it ( this version can't be tested from github )
 [http://localhost:3000](http://localhost:3000)
 
-I've created some files to simulate layouts\
-A layout is a group of information showed on the screen.\
+#How the information is displayed
 I understand that a computer ( or mobile .. or device) can be connected to different machines, creating different parts.\
+
+A part is all the information related to a device, or task, or machine .. I'm not sure\
+A layout is a group of information showed on the screen.\
+
 Maybe it could be out of scope of this practice, and only one layout could be enough but I didn't have nothing better to do this Sunday.\
 
 This should be loaded/maintained from a service
 Now are static layouts, but easy to modify to test other views
 
-inside src/setup/ you could see for example the file `setupPartA`
 
 Each file has 3 important parts:
 
@@ -60,18 +24,18 @@ A control is an specific value loaded from api
 
 ```javascript
 { id: 'a',
-  name: 'Feat-A - Cont-A',
+  name: 'Control Name',
   nominal: 10,
-  normalDev: 2,
-  maxDev: 4,
+  dev1: 2,
+  dev2: 4,
 },
 ```
 
 It has id and name to show what control is\
 Nominal es the perfect value we want\
-Deviations until `normalDev` are valid, and you will see a green icon\
-From `normalDev` until `maxDev` are tagged with a Warning and a orange icon\
-Deviations greater than `maxDev` are flagged as dangerous and a red icon\
+Deviations until `dev1` are valid, and you will see a green icon\
+From `dev1` until `dev2` are tagged with a Warning and a orange icon\
+Deviations greater than `dev2` are flagged as dangerous and a red icon\
 
 ### Features
 
@@ -127,11 +91,14 @@ column: ['feat-f'],
 
 ## Limits
 
+### .env
+Allow to set `environment` to define specific database values
+But only dev works ... 
+
 ### Layouts are fixed and can't be updated
 
 Yes, this should be nice to allow it. \
 Create another service to allow a CRUD environment.\
-The information is stored inside the context state, it could be easy to implement
 
 ### Only 5 columns are allowed, \
 
@@ -161,12 +128,7 @@ This could be easy to do, the big issue is merge both logics, absoluts + percent
 ### Definion talks about `Dev out total`
 
 `Dev out total: is the total deviation outside measurement for the last N pieces measured.`\
-This is not implemented.
-I should create some logic to store old values to allow this.\
-And it made the exercise very complicated\
-And in addition, in the layout capture that information did not appear.\
-... and when I asked, it didn't seem to be important either.\
-... Ojos que no ven ... I know, it's not serious, it's a little joke.
+I created something with the last 10 values, some average .. but I had some doubts, and I didn't spend time here
 
 ## Available Scripts
 
@@ -181,11 +143,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Launches the test runner in the interactive watch mode.\
 
-### `yarn build`
+### `yarn lint` and `yarn lint-fix`
 
-Builds the app for production to the `build` folder.\
-
-### `yarn deploy`
-
-Builds the app for production and deploy it to github url.\
-Open [https://antonioballesteros.github.io/abb/](https://antonioballesteros.github.io/abb/) to view it in the browser.
+Show and fix linter problems

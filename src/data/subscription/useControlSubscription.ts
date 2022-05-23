@@ -1,5 +1,3 @@
-import { useStorage } from 'data/storage'
-
 import { UPDATED_CONTROL, ADDED_CONTROL, GET_PART } from 'data/graphql'
 import { ControlFragment } from 'data/graphql/fragments'
 
@@ -8,8 +6,6 @@ import { useApolloClient, useSubscription } from '@apollo/client'
 import { PartType } from 'types'
 const useControlSubscription = () => {
   const client = useApolloClient()
-
-  const [id] = useStorage()
 
   useSubscription(UPDATED_CONTROL, {
     onSubscriptionData: ({ subscriptionData }) => {
@@ -32,6 +28,9 @@ const useControlSubscription = () => {
         fragment: ControlFragment,
         data: newData
       })
+      const id = sessionStorage.getItem('defaultPart')
+
+      console.log('aaaa22', { id, ss: sessionStorage.getItem('defaultPart') })
 
       const data = client.readQuery({
         query: GET_PART,
@@ -60,7 +59,7 @@ const useControlSubscription = () => {
       client.writeQuery({
         query: GET_PART,
         variables: {
-          id: sessionStorage.getItem('defaultPart')
+          id
         },
         data: {
           ...data,
