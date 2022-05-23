@@ -28,9 +28,7 @@ const useControlSubscription = () => {
         fragment: ControlFragment,
         data: newData
       })
-      const id = sessionStorage.getItem('defaultPart')
-
-      console.log('aaaa22', { id, ss: sessionStorage.getItem('defaultPart') })
+      const id = newData.feature.layout.partId
 
       const data = client.readQuery({
         query: GET_PART,

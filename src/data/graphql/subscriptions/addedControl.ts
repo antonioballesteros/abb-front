@@ -5,6 +5,11 @@ const ADDED_CONTROL = gql`
 subscription {
   addedControl{
      ...Control
+     feature {
+      layout {
+        partId
+      }
+    }
    }
  }
  ${ControlFragment}
