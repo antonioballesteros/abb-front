@@ -16,8 +16,8 @@ function App () {
     setId(newId)
   }
 
+  if (error) return <ErrorCard msg={error.toString()} />
   if (loading || !data?.parts) return <Loading />
-  if (error != null) return <ErrorCard msg={error.toString()} />
 
   const parts: PartType[] = data.parts
 
