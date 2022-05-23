@@ -17,7 +17,7 @@ function Part ({ id }: PartT) {
   if (error != null) return <ErrorCard msg={error.toString()} />
 
   const part: PartType = data.getPart
-  console.log('aaaa', { part, loading, error })
+  console.log('[refresh]', { part, loading, error })
 
   return (
     <div className='part'>
