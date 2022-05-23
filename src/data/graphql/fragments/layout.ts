@@ -5,6 +5,7 @@ fragment Layout on Layout {
     id
     name
     size
+    partId
 }
 `
 

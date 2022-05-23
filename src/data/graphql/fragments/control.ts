@@ -11,6 +11,7 @@ fragment Control on Control {
     value
     quality
     lasts
+    featureId
 }
 `
 

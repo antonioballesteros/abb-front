@@ -5,6 +5,7 @@ fragment Feature on Feature {
     id
     name
     quality
+    layoutId
 }
 `
 
