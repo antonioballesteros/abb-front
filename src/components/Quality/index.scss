@@ -1,0 +1,16 @@
+.quality {
+  border-radius: 50%;
+
+  &.BAD {
+    background: red;
+  }
+
+  &.WARNING {
+    background: orange;
+  }
+
+  &.GOOD,
+  &.PERFECT {
+    background: green;
+  }
+}

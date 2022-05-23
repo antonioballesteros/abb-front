@@ -1,0 +1,24 @@
+.control {
+  display: flex;
+  width: 100%;
+  min-height: 24px;
+  margin: auto 0;
+
+  div {
+    margin: auto 3px;
+    &.name {
+      width: 50%;
+    }
+    &.dev {
+      width: 10%;
+      text-align: right;
+    }
+    &.dev-tol {
+      width: 30%;
+      text-align: right;
+    }
+    &.quality {
+      width: 10%;
+    }
+  }
+}

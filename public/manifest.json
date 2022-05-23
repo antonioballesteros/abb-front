@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "AbbApp",
+  "name": "Prueba Técnica Frontend - AbbApp",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,7 +18,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://antonioballesteros.github.io/abb/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
