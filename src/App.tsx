@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import { Part } from 'page'
 import { Loading, ErrorCard, ButtonList } from 'components'
 import './App.scss'
-import { useGetParts } from './data'
+import { useGetParts, useControlSubscription } from './data'
 import { PartType } from 'types'
 
 function App () {
   const [id, setId] = useState(sessionStorage.getItem('defaultPart'))
 
   const { data, loading, error } = useGetParts()
+  useControlSubscription()
 
   const onClick = (newId:string) => {
     sessionStorage.setItem('defaultPart', newId)

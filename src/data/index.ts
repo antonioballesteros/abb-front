@@ -1,3 +1,5 @@
 import { useGetPart, useGetParts } from './part'
 
-export { useGetPart, useGetParts }
+import useControlSubscription from './subscription/useControlSubscription'
+
+export { useGetPart, useGetParts, useControlSubscription }
