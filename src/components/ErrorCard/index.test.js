@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react'
-import ErrorCard from './ErrorCard'
+import ErrorCard from './'
 
 test('ErrorCard', () => {
   render(<ErrorCard msg='very bad error' />)

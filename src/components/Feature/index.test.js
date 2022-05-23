@@ -1,12 +1,11 @@
 import { render, screen } from '@testing-library/react'
 import Feature from '.'
-import { GOOD } from '../../setup'
 
 const createFeature = () => {
   return {
     id: 1,
     name: 'Feature Test 1',
-    quality: GOOD,
+    quality: 'GOOD',
     controls: []
   }
 }
