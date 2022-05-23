@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client'
 
-const useDoQuery = (gql: any, options: any) => {
+const useDoQuery = (gql: any, options: any = {}) => {
   const defaultOptions = {
     errorPolicy: 'all'
   }

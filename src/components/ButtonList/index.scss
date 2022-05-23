@@ -1,0 +1,16 @@
+.button-list {
+  display: flex;
+  position: absolute;
+  height: 50px;
+
+  right: 0;
+  top: 0;
+
+  background-color: aqua;
+
+  button {
+    margin: 5px;
+    padding: 5px;
+    font-size: 16px;
+  }
+}

@@ -1,3 +1,3 @@
-import useGetPart from './part'
+import { useGetPart, useGetParts } from './part'
 
-export { useGetPart }
+export { useGetPart, useGetParts }

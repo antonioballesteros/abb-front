@@ -1,4 +1,4 @@
-import { useDoQuery, GET_PART } from 'data/graphql'
+import { useDoQuery, GET_PART, GET_PARTS } from 'data/graphql'
 
 interface UseGetPartType {
   id: string
@@ -9,4 +9,8 @@ const useGetPart = ({ id }: UseGetPartType) => {
   })
 }
 
-export default useGetPart
+const useGetParts = () => {
+  return useDoQuery(GET_PARTS)
+}
+
+export { useGetPart, useGetParts }
